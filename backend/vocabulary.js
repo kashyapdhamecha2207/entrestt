@@ -5,7 +5,7 @@ const app = express();
 const port = 8000;
 
 // MongoDB connection details
-const uri  = "mongodb+srv://Test:Kashyap99@cluster0.vwkop.mongodb.net/"
+const uri  = "mongodb://localhost:27017/"
 const dbName = "entrestt";
 
 // Middleware
