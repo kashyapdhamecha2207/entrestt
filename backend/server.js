@@ -5,7 +5,7 @@ const app = express();
 const port = 5000;
 
 // MongoDB connection details
-const uri  = "mongodb://localhost:27017/"
+const uri  = "mongodb+srv://kashyapdhamecha:Kashyap%4099@entrestt.db7vi.mongodb.net/entrestt?retryWrites=true&w=majority"
 const dbName = "entrestt";
 
 // Middleware
@@ -99,10 +99,10 @@ app.patch('/userProfile/:userNumber', async (req, res) => {
 
 
 // DELETE: Remove a userProfile
-app.delete('/userProfile/:email', async (req, res) => {
+app.delete('/userProfile/:userNumber', async (req, res) => {
     try {
-        const email = parseInt(req.params.email);
-        const result = await userProfile.deleteOne({ email });
+        const userNumber = parseInt(req.params.userNumber);
+        const result = await userProfile.deleteOne({ userNumber });
         res.status(200).send(`${result.deletedCount} document(s) deleted`);
     } catch (err) {
         res.status(500).send("Error deleting userProfile: " + err.message);
